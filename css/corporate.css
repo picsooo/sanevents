@@ -119,3 +119,61 @@ p{margin:0 0 1em}
 .contact-list small{color:var(--gris);font-size:13.5px}
 .contact-list strong{font:500 clamp(26px,6vw,38px)/1.1 "Bodoni Moda",serif}
 .mt{margin-top:22px}
+/* ===== V1 vivante : couleurs de l'événementiel ===== */
+:root{--magenta:#E3247A;--or:#F4B63F;--violet:#8A5BFF;--cyan:#3EE0F5;--nuit:#140A2E}
+.btn.blue{background:var(--magenta);border-color:var(--magenta)}
+.btn.blue:hover{background:#c8165f}
+.live{position:relative;margin:0;border-radius:6px;overflow:hidden;background:#0d0b33;aspect-ratio:16/10}
+.live canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-live{margin-top:36px;aspect-ratio:4/3.4}
+@media(min-width:700px){.hero-live{aspect-ratio:16/7.4}}
+.chips{position:absolute;left:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 12px;font:500 13px/1 "Hanken Grotesk"}
+/* bandeau défilant */
+.marquee{margin:40px 0 0 -5%;width:110%;background:var(--magenta);color:#fff;overflow:hidden;padding:16px 0;transform:rotate(-1.2deg)}
+html,body{overflow-x:clip}
+.mq-track{display:flex;gap:34px;width:max-content;animation:mq 32s linear infinite;font:400 italic clamp(22px,4.4vw,34px)/1 "Bodoni Moda",serif;white-space:nowrap}
+.mq-track span{display:flex;align-items:center;gap:34px}
+.mq-track span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--or);box-shadow:0 0 12px var(--or)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
+/* tuiles formats */
+.tiles{list-style:none;margin:0;padding:0;display:grid;gap:30px}
+.tiles a{display:grid;gap:12px;text-decoration:none}
+.tiles .live{aspect-ratio:4/3;transition:transform .4s}
+.tiles a:hover .live{transform:translateY(-4px)}
+.tiles .tt{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:6px}
+.tiles h3{font-size:clamp(26px,5vw,34px)}
+.tiles p{margin:0;color:var(--gris);font-size:15.5px;max-width:36em}
+.tiles .go{flex:none;width:46px;height:46px;border:1px solid var(--noir);border-radius:50%;display:grid;place-items:center;transition:.25s}
+.tiles a:hover .go{background:var(--magenta);border-color:var(--magenta);color:#fff}
+@media(min-width:800px){.tiles{grid-template-columns:1fr 1fr;gap:56px 40px}.tiles li:nth-child(even){margin-top:70px}}
+/* étapes sur fond nuit */
+.sec.night{background:var(--nuit);color:#fff}
+.sec.night .intro,.sec.night .steps p{color:#bfb6dc}
+.sec.night .steps,.sec.night .steps div{border-color:#ffffff22}
+@media(min-width:960px){.sec.night .steps div{border-top-color:var(--or)}}
+.sec.night .steps b{color:var(--or)}
+/* référence */
+.ref{background:#120826}
+.ref-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.75}
+.ref>div{position:relative;z-index:1}
+.ref::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,8,38,.92),rgba(18,8,38,.35))}
+.ref .who{color:var(--or)}
+.ref p{color:#e4dcf7}
+/* bandeaux avec scène */
+.cta-band{position:relative;overflow:hidden}
+.band-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.85}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.88) 10%,rgba(0,0,0,.25))}
+.cta-band .wrap{position:relative;z-index:2}
+.page-hero{position:relative;overflow:hidden;background:var(--nuit);color:#fff;border-bottom:0}
+.ph-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.8}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,10,46,.95) 20%,rgba(20,10,46,.35))}
+.page-hero .wrap{position:relative;z-index:2}
+.page-hero p,.page-hero .crumb{color:#d7cfee}
+.calc input[type=range]{accent-color:var(--magenta)}
+.calc [data-out] strong{color:var(--magenta)}
+.dispo input:checked+label{background:var(--nuit);border-color:var(--nuit)}
+.checklist li::before{border-color:var(--magenta);background:radial-gradient(circle,var(--magenta) 0 3px,transparent 3.5px)}
+.steps b{color:var(--magenta)}
+.vpill{background:var(--magenta,#E3247A);box-shadow:0 6px 22px rgba(227,36,122,.4)}
