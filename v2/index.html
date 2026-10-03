@@ -21,7 +21,8 @@
   <section class="hall" id="hall" data-state="off">
     <div class="slats" aria-hidden="true"></div>
     <div class="wall">
-      <canvas id="led" aria-hidden="true"></canvas>
+      <div class="screen-in" id="screen"><img class="shot on" data-mood="convention" src="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Séminaire devant un grand écran" decoding="async"><img class="shot" data-mood="lancement" src="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Public devant une scène éclairée en bleu" decoding="async"><img class="shot" data-mood="gala" src="https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Dîner de gala aux centres de table fleuris" decoding="async"><img class="shot" data-mood="congres" src="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Intervenant devant un auditorium plein" decoding="async"><div class="pixels" aria-hidden="true"></div></div>
+      <div class="flash" aria-hidden="true"></div>
       <div class="led-text" aria-live="polite"><span id="ledLine"></span></div>
     </div>
     <div class="hall-copy">
@@ -37,22 +38,24 @@
     </div>
   </section>
 
+
+
+  <section class="scene" id="scene" aria-live="polite">
+    <div class="scene-head">
+      <p class="scene-k" id="sceneK">Convention</p>
+      <h2 id="sceneT">Séminaires et conventions</h2>
+      <p id="sceneD">Plénières, ateliers, intervenants : un programme mis en scène, de l’accueil à la clôture.</p>
+    </div>
+    <ol class="scene-list" id="sceneL"></ol>
+    <div class="scene-foot"><span class="validate">Contenus à valider par l’administration de SAN EVENT</span><a class="go-link" href="#rdv" id="sceneC">Préparer votre convention</a></div>
+  </section>
+
   <section class="manifest">
     <p class="big">SAN EVENT conçoit et organise des événements professionnels sur mesure, alliant créativité, rigueur et excellence opérationnelle.</p>
     <p class="small">De l’idée à la réalisation, nous créons des expériences impactantes, mémorables et parfaitement alignées avec vos objectifs.</p>
   </section>
 
-  <section class="screens" aria-labelledby="fmt">
-    <div class="head"><h2 id="fmt">Quatre scènes, un seul interlocuteur</h2><span class="validate">Contenus à valider par l’administration de SAN EVENT</span></div>
-    <div class="strip">
-      <article class="screen" data-mood="convention"><div class="glass"></div><h3>Séminaires et conventions</h3><p>Plénières, ateliers, intervenants : un programme mis en scène, de l’accueil à la clôture.</p></article>
-      <article class="screen" data-mood="lancement"><div class="glass"></div><h3>Lancements de produit</h3><p>Un moment fort pour révéler une nouveauté à la presse, aux partenaires et au réseau.</p></article>
-      <article class="screen" data-mood="gala"><div class="glass"></div><h3>Soirées de gala</h3><p>Décor, lumière et déroulé pour remercier, célébrer et marquer les esprits.</p></article>
-      <article class="screen" data-mood="congres"><div class="glass"></div><h3>Congrès et journées d’étude</h3><p>Salles, badges, régie et écrans pour des journées professionnelles fluides.</p></article>
-    </div>
-  </section>
-
-  <section class="ref">
+  <section class="ref"><img class="ref-photo" src="https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?auto=format&fit=crop&w=1600&q=72" alt="" loading="lazy" decoding="async">
     <p class="kicker">Ils nous ont fait confiance</p>
     <h2>SOGEMCO</h2>
     <p>Un événement d’exception conçu et organisé par SAN EVENT, partagé en images par l’équipe du client.</p>
