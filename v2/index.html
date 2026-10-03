@@ -13,58 +13,88 @@
 </head>
 <body>
 <header class="bar">
-  <a href="#top" aria-label="SAN EVENT"><img src="../img/logo-clair.svg" alt="SAN EVENT" width="88" height="42"></a>
-  <a class="bar-cta" href="#rdv">Prendre rendez-vous</a>
+  <a href="#top" aria-label="SAN EVENT, haut de page"><img src="../img/logo-clair.svg" alt="SAN EVENT" width="88" height="42"></a>
+  <a class="bar-cta" href="#contact">Organiser un événement</a>
 </header>
-
 <main id="top">
-  <section class="hall" id="hall" data-state="off">
-    <div class="slats" aria-hidden="true"></div>
-    <div class="wall">
-      <div class="screen-in" id="screen"><img class="shot on" data-mood="convention" src="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Séminaire devant un grand écran" decoding="async"><img class="shot" data-mood="lancement" src="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Public devant une scène éclairée en bleu" decoding="async"><img class="shot" data-mood="gala" src="https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1768508950719-4d76978fdf44?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Dîner de gala aux centres de table fleuris" decoding="async"><img class="shot" data-mood="congres" src="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:1100px) 1100px, 100vw" alt="Intervenant devant un auditorium plein" decoding="async"><div class="pixels" aria-hidden="true"></div></div>
-      <div class="flash" aria-hidden="true"></div>
-      <div class="led-text" aria-live="polite"><span id="ledLine"></span></div>
+  <section class="hero">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=2200&q=72 2200w" sizes="100vw" alt="Public dans une salle de conférence éclairée" decoding="async">
+    <div class="hero-in">
+      <h1 class="words" aria-label="On imagine, on crée, vous vibrez."><span>On imagine.</span><span>On crée.</span><span>Vous vibrez.</span></h1>
+      <p class="hero-sub">SAN EVENT conçoit et organise des événements professionnels sur mesure à Alger, de l’idée à la réalisation.</p>
+      <div class="hero-cta"><a class="btn-a" href="#contact">Organiser un événement</a><a class="btn-b" href="#jour-j">Voir le jour J</a></div>
     </div>
-    <div class="hall-copy">
-      <h1 class="sr">SAN EVENT, conception et organisation d’événements professionnels sur mesure</h1>
-      <p class="type" id="typed" aria-hidden="true"></p>
-      <button class="switch" id="switch" type="button"><span class="dot"></span><span id="switchLabel">Allumer la salle</span></button>
-      <div class="console" id="console" role="radiogroup" aria-label="Choisir une ambiance">
-        <button type="button" role="radio" aria-checked="true" data-mood="convention">Convention</button>
-        <button type="button" role="radio" aria-checked="false" data-mood="lancement">Lancement</button>
-        <button type="button" role="radio" aria-checked="false" data-mood="gala">Gala</button>
-        <button type="button" role="radio" aria-checked="false" data-mood="congres">Congrès</button>
+    <a class="scroll-hint" href="#jour-j" aria-label="Descendre vers le déroulé du jour J"><span></span></a>
+  </section>
+
+  <section class="day" id="jour-j">
+    <div class="day-head">
+      <h2>Le jour J, minute par minute</h2>
+      <p>Ce que vos invités ne voient pas, c’est tout ce que nous avons préparé. Faites défiler la journée.</p>
+      <span class="validate">Déroulé type, à valider par l’administration de SAN EVENT</span>
+    </div>
+    <div class="day-grid">
+      <div class="day-sticky" aria-hidden="true">
+        <div class="clock"><span id="clockH">07</span><i>:</i><span id="clockM">30</span></div>
+        <div class="stack"><img class="st on" data-i="0" src="https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=1400&q=72 1400w" sizes="50vw" alt="" decoding="async"><img class="st" data-i="1" src="https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=1400&q=72 1400w" sizes="50vw" alt="" decoding="async"><img class="st" data-i="2" src="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72 1400w" sizes="50vw" alt="" decoding="async"><img class="st" data-i="3" src="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72 1400w" sizes="50vw" alt="" decoding="async"><img class="st" data-i="4" src="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=800&q=72 800w, https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=1400&q=72 1400w" sizes="50vw" alt="" decoding="async"></div>
+        <div class="progress"><b id="prog"></b></div>
+      </div>
+      <div class="day-list">
+      <article class="moment" data-time="07:30">
+        <figure class="m-photo"><img class="" src="https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1560523160-c4ef2f0c61a9?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:960px) 50vw, 100vw" alt="Salle vide prête à accueillir le public" loading="lazy" decoding="async"></figure>
+        <p class="m-time">07:30</p>
+        <h3>Montage</h3>
+        <p>Scène, écran LED, son et lumière : tout est installé et testé avant l’arrivée du premier invité.</p>
+      </article>
+      <article class="moment" data-time="09:00">
+        <figure class="m-photo"><img class="" src="https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1560439514-07abbb294a86?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:960px) 50vw, 100vw" alt="Hall d’accueil d’un centre de conférence" loading="lazy" decoding="async"></figure>
+        <p class="m-time">09:00</p>
+        <h3>Accueil</h3>
+        <p>Hôtesses, badges et orientation : vos invités sont attendus, reconnus et placés.</p>
+      </article>
+      <article class="moment" data-time="10:00">
+        <figure class="m-photo"><img class="" src="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:960px) 50vw, 100vw" alt="Intervenant devant un auditorium plein" loading="lazy" decoding="async"></figure>
+        <p class="m-time">10:00</p>
+        <h3>Plénière</h3>
+        <p>Les intervenants se succèdent, la régie suit le conducteur à la seconde près.</p>
+      </article>
+      <article class="moment" data-time="14:30">
+        <figure class="m-photo"><img class="" src="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:960px) 50vw, 100vw" alt="Participants devant un grand écran" loading="lazy" decoding="async"></figure>
+        <p class="m-time">14:30</p>
+        <h3>Ateliers</h3>
+        <p>Salles en parallèle, supports projetés, pauses servies à l’heure.</p>
+      </article>
+      <article class="moment" data-time="20:00">
+        <figure class="m-photo"><img class="" src="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=1400&q=72" srcset="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=700&q=72 700w, https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=1400&q=72 1400w, https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=2200&q=72 2200w" sizes="(min-width:960px) 50vw, 100vw" alt="Table de soirée dressée avec bougies et fleurs" loading="lazy" decoding="async"></figure>
+        <p class="m-time">20:00</p>
+        <h3>Soirée</h3>
+        <p>Tables dressées, lumière tamisée : la journée se termine sur un moment qui reste.</p>
+      </article>
       </div>
     </div>
   </section>
 
-
-
-  <section class="scene" id="scene" aria-live="polite">
-    <div class="scene-head">
-      <p class="scene-k" id="sceneK">Convention</p>
-      <h2 id="sceneT">Séminaires et conventions</h2>
-      <p id="sceneD">Plénières, ateliers, intervenants : un programme mis en scène, de l’accueil à la clôture.</p>
-    </div>
-    <ol class="scene-list" id="sceneL"></ol>
-    <div class="scene-foot"><span class="validate">Contenus à valider par l’administration de SAN EVENT</span><a class="go-link" href="#rdv" id="sceneC">Préparer votre convention</a></div>
+  <section class="formats">
+    <h2>Nos formats</h2>
+    <ul class="f-list">
+      <li><a href="#contact" data-img="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=900&q=72"><span class="f-n">Séminaires et conventions</span><span class="f-d">Réunir équipes et réseau autour d’un programme.</span><img class="f-thumb" src="https://images.unsplash.com/photo-1769798643655-e0f10f62c3fd?auto=format&fit=crop&w=700&q=72" alt="" loading="lazy" decoding="async"></a></li>
+      <li><a href="#contact" data-img="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=900&q=72"><span class="f-n">Lancements de produit</span><span class="f-d">Révéler une nouveauté à la presse et aux partenaires.</span><img class="f-thumb" src="https://images.unsplash.com/photo-1663668566893-7a4887f9a41d?auto=format&fit=crop&w=700&q=72" alt="" loading="lazy" decoding="async"></a></li>
+      <li><a href="#contact" data-img="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=900&q=72"><span class="f-n">Soirées de gala et dîners</span><span class="f-d">Remercier, célébrer, marquer les esprits.</span><img class="f-thumb" src="https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=700&q=72" alt="" loading="lazy" decoding="async"></a></li>
+      <li><a href="#contact" data-img="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=900&q=72"><span class="f-n">Congrès et journées d’étude</span><span class="f-d">Salles, badges, régie et écrans pour des journées fluides.</span><img class="f-thumb" src="https://images.unsplash.com/photo-1773828755374-0ee802d9f44b?auto=format&fit=crop&w=700&q=72" alt="" loading="lazy" decoding="async"></a></li>
+    </ul>
+    <img class="f-float" id="fFloat" alt="" aria-hidden="true">
   </section>
 
-  <section class="manifest">
-    <p class="big">SAN EVENT conçoit et organise des événements professionnels sur mesure, alliant créativité, rigueur et excellence opérationnelle.</p>
-    <p class="small">De l’idée à la réalisation, nous créons des expériences impactantes, mémorables et parfaitement alignées avec vos objectifs.</p>
-  </section>
-
-  <section class="ref"><img class="ref-photo" src="https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?auto=format&fit=crop&w=1600&q=72" alt="" loading="lazy" decoding="async">
-    <p class="kicker">Ils nous ont fait confiance</p>
-    <h2>SOGEMCO</h2>
-    <p>Un événement d’exception conçu et organisé par SAN EVENT, partagé en images par l’équipe du client.</p>
+  <section class="ref">
+    <p class="ref-k">Référence</p>
+    <p class="ref-big">SOGEMCO</p>
+    <p class="ref-t">Un événement d’exception conçu et organisé par SAN EVENT, partagé en images par l’équipe du client.</p>
   </section>
 
   <section class="sizer">
-    <div class="head"><h2>Combien seront-ils ?</h2><p>Glissez pour estimer la surface utile de la salle.</p></div>
+    <h2>Combien d’invités ?</h2>
     <div class="calc" data-calc>
-      <div class="paxv" data-paxv>120</div>
+      <div class="pax-row"><div class="paxv" data-paxv>120</div><span>invités</span></div>
       <input type="range" name="pax" min="10" max="1000" step="10" value="120" aria-label="Nombre d’invités">
       <div class="dispo" role="radiogroup" aria-label="Disposition">
         <input type="radio" id="e1" name="dispo" value="theatre" checked><label for="e1">Théâtre</label>
@@ -74,23 +104,22 @@
         <input type="radio" id="e5" name="dispo" value="cocktail"><label for="e5">Cocktail</label>
       </div>
       <div class="out" data-out aria-live="polite"></div>
-      <small>Estimation indicative, hors scène, régie et buffet.</small>
+      <small>Estimation indicative de la surface utile, hors scène et régie.</small>
     </div>
   </section>
 
-  <section class="rdv" id="rdv">
-    <div class="head"><h2>Votre prochain événement commence ici</h2><p>Un rendez-vous pour cadrer le projet, puis une première proposition.</p></div>
+  <section class="contact" id="contact">
+    <h2>Votre événement commence par un appel.</h2>
+    <a class="phone" href="tel:+213770060941">0770 06 09 41</a>
     <form class="form" data-fake novalidate>
-      <label>Type d’événement<select name="type"><option>Séminaire ou convention</option><option>Lancement de produit</option><option>Soirée de gala</option><option>Congrès ou journée d’étude</option><option>Autre</option></select></label>
+      <label>Type d’événement<select name="type"><option>Séminaire ou convention</option><option>Lancement de produit</option><option>Soirée de gala ou dîner</option><option>Congrès ou journée d’étude</option><option>Autre</option></select></label>
       <div class="row"><label>Date envisagée<input type="month" name="date"></label><label>Invités<input type="number" name="pax" min="5" placeholder="120"></label></div>
       <div class="row"><label>Nom et société<input type="text" name="nom" autocomplete="organization"></label><label>Téléphone<input type="tel" name="tel" autocomplete="tel"></label></div>
-      <button class="go" type="submit">Envoyer ma demande de rendez-vous</button>
+      <button class="btn-a" type="submit">Demander un rendez-vous</button>
       <p class="form-ok" hidden>Demande envoyée. L’équipe SAN EVENT vous rappelle. Démonstration : aucune donnée n’est enregistrée.</p>
     </form>
-    <a class="phone" href="tel:+213770060941">0770 06 09 41</a>
   </section>
 </main>
-
 <footer class="foot">
   <img src="../img/logo-clair.svg" alt="SAN EVENT" width="120" height="58">
   <p>On imagine, on crée, vous vibrez.<br>Alger, Algérie</p>

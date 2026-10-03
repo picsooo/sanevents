@@ -1,30 +1,28 @@
 (function(){
-  var hall=document.getElementById('hall'), typed=document.getElementById('typed'), line=document.getElementById('ledLine');
-  var sw=document.getElementById('switch'), swl=document.getElementById('switchLabel');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var MOODS={
-    convention:{glow:'#2C3BFF',screen:'Convention annuelle',k:'Convention',t:'Séminaires et conventions',d:'Plénières, ateliers, intervenants : un programme mis en scène, de l\u2019accueil à la clôture.',c:'Préparer votre convention',l:[['Le lieu','Hôtel, centre de conférence ou espace atypique, selon la jauge.'],['La scène','Écran LED, habillage à vos couleurs, pupitre et régie.'],['Le jour J','Accueil, badges, timing des interventions, pauses.']]},
-    lancement:{glow:'#3EE0F5',screen:'Le lancement',k:'Lancement',t:'Lancements de produit',d:'Un moment fort pour révéler une nouveauté à la presse, aux partenaires et au réseau.',c:'Préparer votre lancement',l:[['Le dévoilement','Mise en scène de la révélation : lumière, son, compte à rebours.'],['Les invités','Presse, distributeurs, partenaires : invitations et accueil.'],['L\u2019image','Photo et vidéo prêtes pour vos réseaux le soir même.']]},
-    gala:{glow:'#F4B63F',screen:'Soirée de gala',k:'Gala',t:'Soirées de gala et dîners',d:'Décor, lumière et déroulé pour remercier, célébrer et marquer les esprits.',c:'Préparer votre soirée',l:[['Le décor','Tables, centres de table, éclairage d\u2019ambiance.'],['Le déroulé','Discours, remises de prix, animation et musique.'],['Le dîner','Traiteur, service et plan de table.']]},
-    congres:{glow:'#2CFFC4',screen:'Journées d\u2019étude',k:'Congrès',t:'Congrès et journées d\u2019étude',d:'Salles, badges, régie et écrans pour des journées professionnelles fluides.',c:'Préparer votre congrès',l:[['Les inscriptions','Liste des participants, badges et accueil.'],['Les salles','Plénière et ateliers, sonorisés et équipés.'],['La logistique','Pauses, déjeuners, hébergement des intervenants.']]}
-  };
-  var mood='convention', on=false;
-  var timer=null;
-  function type(txt,cb){clearTimeout(timer);var i=0;(function step(){typed.innerHTML=txt.slice(0,i)+'<span class="c"></span>';if(i++<txt.length){timer=setTimeout(step,reduce?0:55);}else if(cb){timer=setTimeout(cb,700);}})();}
-  type('On imagine.');
-  var K=document.getElementById('sceneK'),T=document.getElementById('sceneT'),D=document.getElementById('sceneD'),L=document.getElementById('sceneL'),C=document.getElementById('sceneC'),panel=document.getElementById('scene');
-  function setMood(k,anim){mood=k;var m=MOODS[k];hall.style.setProperty('--glow',m.glow);document.documentElement.style.setProperty('--accent',m.glow);line.textContent=m.screen;
-    document.querySelectorAll('#console button').forEach(function(b){b.setAttribute('aria-checked',b.dataset.mood===k);});
-    document.querySelectorAll('#screen .shot').forEach(function(im){im.classList.toggle('on',im.dataset.mood===k);});
-    if(anim){panel.classList.remove('swap');void panel.offsetWidth;panel.classList.add('swap');hall.classList.remove('blink');void hall.offsetWidth;hall.classList.add('blink');}
-    K.textContent=m.k;T.textContent=m.t;D.textContent=m.d;C.textContent=m.c;
-    L.innerHTML=m.l.map(function(x){return '<li><strong>'+x[0]+'</strong><span>'+x[1]+'</span></li>';}).join('');}
-  setMood('convention',false);
-  sw.addEventListener('click',function(){
-    on=!on;hall.dataset.state=on?'on':'off';swl.textContent=on?'Éteindre la salle':'Allumer la salle';
-    if(on){type('On crée.',function(){type('Vous vibrez.');});}else{type('On imagine.');}
-  });
-  document.querySelectorAll('#console button').forEach(function(b){b.addEventListener('click',function(){
-    if(!on){on=true;hall.dataset.state='on';swl.textContent='Éteindre la salle';type('Vous vibrez.');}
-    setMood(b.dataset.mood,true);});});
+  var bar=document.querySelector('.bar');
+  function onScroll(){bar.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* horloge du jour J */
+  var moments=[].slice.call(document.querySelectorAll('.moment')), H=document.getElementById('clockH'), M=document.getElementById('clockM');
+  var stack=[].slice.call(document.querySelectorAll('.st')), prog=document.getElementById('prog'), cur=-1;
+  function setTime(t){var p=t.split(':');[[H,p[0]],[M,p[1]]].forEach(function(x){if(x[0].textContent!==x[1]){x[0].textContent=x[1];x[0].classList.remove('tick');void x[0].offsetWidth;x[0].classList.add('tick');}});}
+  function activate(i){if(i===cur)return;cur=i;setTime(moments[i].dataset.time);
+    moments.forEach(function(m,j){m.classList.toggle('on',j===i);});stack.forEach(function(s,j){s.classList.toggle('on',j===i);});
+    prog.style.transform='scaleX('+((i+1)/moments.length)+')';}
+  function pick(){var mid=window.innerHeight*0.5,best=0,bd=1e9;moments.forEach(function(m,i){var r=m.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-mid);if(d<bd){bd=d;best=i;}});activate(best);}
+  window.addEventListener('scroll',pick,{passive:true});pick();
+  /* image qui suit le curseur sur les formats (ordinateur) */
+  var fl=document.getElementById('fFloat');
+  if(window.matchMedia('(hover:hover) and (min-width:960px)').matches){
+    document.querySelectorAll('.f-list a').forEach(function(a){
+      a.addEventListener('mouseenter',function(){fl.src=a.dataset.img;fl.classList.add('on');});
+      a.addEventListener('mouseleave',function(){fl.classList.remove('on');});
+      a.addEventListener('mousemove',function(e){fl.style.left=(e.clientX+170)+'px';fl.style.top=e.clientY+'px';});
+    });
+  }
+  /* apparitions */
+  var els=document.querySelectorAll('.day-head,.f-list li,.ref,.sizer,.contact h2,.phone,.form');
+  els.forEach(function(e){e.classList.add('rv');});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px'});els.forEach(function(e){io.observe(e);});}
+  else els.forEach(function(e){e.classList.add('in');});
 })();
