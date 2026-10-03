@@ -1,0 +1,23 @@
+@font-face{font-family:"Bodoni Moda";src:url(../fonts/bodoni-moda-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(../fonts/bodoni-moda-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(../fonts/bodoni-moda-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(../fonts/hanken-grotesk-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(../fonts/hanken-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(../fonts/hanken-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img,svg{max-width:100%;display:block}
+/* bandeau démo + pastille version : communs aux deux versions */
+.demo-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:#000;color:#fff;font:500 11.5px/1.3 "Hanken Grotesk",system-ui,sans-serif;text-align:center;padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(255,255,255,.18)}
+body{padding-bottom:calc(46px + env(safe-area-inset-bottom,0px))}
+.vpill{position:fixed;left:14px;bottom:calc(46px + env(safe-area-inset-bottom,0px));z-index:91;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:#1E2FD8;color:#fff;text-decoration:none;font:600 13px/1 "Hanken Grotesk",system-ui,sans-serif;box-shadow:0 6px 22px rgba(30,47,216,.38)}
+.vpill i{width:10px;height:10px;border-radius:50%;background:#fff;position:relative;flex:none}
+.vpill i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #fff;animation:vpRing 1.8s ease-out infinite}
+@keyframes vpRing{from{transform:scale(.6);opacity:1}to{transform:scale(1.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.vpill i::after{animation:none}}
+.validate{display:inline-flex;align-items:center;gap:8px;background:#FFF1E0;color:#8A4B00;border:1px solid #F5B66A;border-radius:999px;padding:6px 12px;font:500 12.5px/1.25 "Hanken Grotesk",system-ui,sans-serif}
+.validate::before{content:"";width:8px;height:8px;border-radius:50%;background:#F08A00;flex:none}
+.toast{position:fixed;left:50%;bottom:110px;transform:translate(-50%,20px);opacity:0;transition:.35s;z-index:95;background:#000;color:#fff;padding:14px 18px;border-radius:12px;max-width:92vw;font:500 14px/1.4 "Hanken Grotesk",sans-serif}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+:focus-visible{outline:2px solid #1E2FD8;outline-offset:3px}

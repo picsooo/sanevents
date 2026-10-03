@@ -1,0 +1,1 @@
+(function(){var b=document.querySelector('.burger'),m=document.getElementById('mnav');if(!b)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');});})();

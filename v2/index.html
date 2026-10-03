@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr" data-version="moderne" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<title>SAN EVENT · On imagine, on crée, vous vibrez</title>
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/bodoni-moda-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="v2.css">
+</head>
+<body>
+<header class="bar">
+  <a href="#top" aria-label="SAN EVENT"><img src="../img/logo-clair.svg" alt="SAN EVENT" width="88" height="42"></a>
+  <a class="bar-cta" href="#rdv">Prendre rendez-vous</a>
+</header>
+
+<main id="top">
+  <section class="hall" id="hall" data-state="off">
+    <div class="slats" aria-hidden="true"></div>
+    <div class="wall">
+      <canvas id="led" aria-hidden="true"></canvas>
+      <div class="led-text" aria-live="polite"><span id="ledLine"></span></div>
+    </div>
+    <div class="hall-copy">
+      <h1 class="sr">SAN EVENT, conception et organisation d’événements professionnels sur mesure</h1>
+      <p class="type" id="typed" aria-hidden="true"></p>
+      <button class="switch" id="switch" type="button"><span class="dot"></span><span id="switchLabel">Allumer la salle</span></button>
+      <div class="console" id="console" role="radiogroup" aria-label="Choisir une ambiance">
+        <button type="button" role="radio" aria-checked="true" data-mood="convention">Convention</button>
+        <button type="button" role="radio" aria-checked="false" data-mood="lancement">Lancement</button>
+        <button type="button" role="radio" aria-checked="false" data-mood="gala">Gala</button>
+        <button type="button" role="radio" aria-checked="false" data-mood="congres">Congrès</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifest">
+    <p class="big">SAN EVENT conçoit et organise des événements professionnels sur mesure, alliant créativité, rigueur et excellence opérationnelle.</p>
+    <p class="small">De l’idée à la réalisation, nous créons des expériences impactantes, mémorables et parfaitement alignées avec vos objectifs.</p>
+  </section>
+
+  <section class="screens" aria-labelledby="fmt">
+    <div class="head"><h2 id="fmt">Quatre scènes, un seul interlocuteur</h2><span class="validate">Contenus à valider par l’administration de SAN EVENT</span></div>
+    <div class="strip">
+      <article class="screen" data-mood="convention"><div class="glass"></div><h3>Séminaires et conventions</h3><p>Plénières, ateliers, intervenants : un programme mis en scène, de l’accueil à la clôture.</p></article>
+      <article class="screen" data-mood="lancement"><div class="glass"></div><h3>Lancements de produit</h3><p>Un moment fort pour révéler une nouveauté à la presse, aux partenaires et au réseau.</p></article>
+      <article class="screen" data-mood="gala"><div class="glass"></div><h3>Soirées de gala</h3><p>Décor, lumière et déroulé pour remercier, célébrer et marquer les esprits.</p></article>
+      <article class="screen" data-mood="congres"><div class="glass"></div><h3>Congrès et journées d’étude</h3><p>Salles, badges, régie et écrans pour des journées professionnelles fluides.</p></article>
+    </div>
+  </section>
+
+  <section class="ref">
+    <p class="kicker">Ils nous ont fait confiance</p>
+    <h2>SOGEMCO</h2>
+    <p>Un événement d’exception conçu et organisé par SAN EVENT, partagé en images par l’équipe du client.</p>
+  </section>
+
+  <section class="sizer">
+    <div class="head"><h2>Combien seront-ils ?</h2><p>Glissez pour estimer la surface utile de la salle.</p></div>
+    <div class="calc" data-calc>
+      <div class="paxv" data-paxv>120</div>
+      <input type="range" name="pax" min="10" max="1000" step="10" value="120" aria-label="Nombre d’invités">
+      <div class="dispo" role="radiogroup" aria-label="Disposition">
+        <input type="radio" id="e1" name="dispo" value="theatre" checked><label for="e1">Théâtre</label>
+        <input type="radio" id="e2" name="dispo" value="classe"><label for="e2">Classe</label>
+        <input type="radio" id="e3" name="dispo" value="cabaret"><label for="e3">Cabaret</label>
+        <input type="radio" id="e4" name="dispo" value="banquet"><label for="e4">Banquet</label>
+        <input type="radio" id="e5" name="dispo" value="cocktail"><label for="e5">Cocktail</label>
+      </div>
+      <div class="out" data-out aria-live="polite"></div>
+      <small>Estimation indicative, hors scène, régie et buffet.</small>
+    </div>
+  </section>
+
+  <section class="rdv" id="rdv">
+    <div class="head"><h2>Votre prochain événement commence ici</h2><p>Un rendez-vous pour cadrer le projet, puis une première proposition.</p></div>
+    <form class="form" data-fake novalidate>
+      <label>Type d’événement<select name="type"><option>Séminaire ou convention</option><option>Lancement de produit</option><option>Soirée de gala</option><option>Congrès ou journée d’étude</option><option>Autre</option></select></label>
+      <div class="row"><label>Date envisagée<input type="month" name="date"></label><label>Invités<input type="number" name="pax" min="5" placeholder="120"></label></div>
+      <div class="row"><label>Nom et société<input type="text" name="nom" autocomplete="organization"></label><label>Téléphone<input type="tel" name="tel" autocomplete="tel"></label></div>
+      <button class="go" type="submit">Envoyer ma demande de rendez-vous</button>
+      <p class="form-ok" hidden>Demande envoyée. L’équipe SAN EVENT vous rappelle. Démonstration : aucune donnée n’est enregistrée.</p>
+    </form>
+    <a class="phone" href="tel:+213770060941">0770 06 09 41</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <img src="../img/logo-clair.svg" alt="SAN EVENT" width="120" height="58">
+  <p>On imagine, on crée, vous vibrez.<br>Alger, Algérie</p>
+  <p>© <span data-year></span> SAN EVENT</p>
+</footer>
+<script src="../js/common.js"></script>
+<script src="v2.js"></script>
+</body>
+</html>

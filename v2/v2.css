@@ -1,0 +1,85 @@
+:root{--ink:#000;--led1:#1E2FD8;--led2:#38B6FF;--led3:#9EE6FF;--warm:#FFE7C4;--mute:#9a9aa6}
+html{background:#000}
+body{background:#000;color:#fff;font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bodoni Moda",Didot,serif;font-weight:500;margin:0;line-height:1.05;letter-spacing:-.01em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 18px 12px;background:linear-gradient(#000c,#0000)}
+.bar img{height:40px;width:auto}
+.bar-cta{color:#fff;text-decoration:none;font:600 14px/1 "Hanken Grotesk";padding:12px 16px;border:1px solid #ffffff55;border-radius:999px}
+/* salle */
+.hall{position:relative;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;padding:96px 16px 70px;overflow:hidden;background:radial-gradient(120% 60% at 50% 38%,#0a0d24 0%,#000 60%)}
+.hall::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 50% 34%,var(--glow,#1E2FD8),transparent 70%);opacity:0;transition:opacity 1.6s ease,background .8s;pointer-events:none}
+.hall[data-state=on]::after{opacity:.38}
+.slats{position:absolute;inset:0 0 auto;height:70px;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,231,196,.0) 46px 49px);transition:background 1s}
+.hall[data-state=on] .slats{background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,231,196,.8) 46px 48px);filter:drop-shadow(0 0 6px #ffe7c4aa)}
+.wall{position:relative;z-index:1;width:min(1100px,100%,calc((100svh - 420px) * 1.7778));margin:0 auto;aspect-ratio:16/9;background:#03040c;border:6px solid #0b0b0f;box-shadow:0 0 0 1px #1c1c26,0 40px 80px -20px #000}
+.wall canvas{position:absolute;inset:0;width:100%;height:100%}
+.led-text{position:absolute;inset:9% 0 auto;text-align:center;font:400 italic clamp(20px,4.6vw,46px)/1.1 "Bodoni Moda",serif;color:#fff;text-shadow:0 0 18px rgba(0,0,0,.9);opacity:0;transition:opacity .8s}
+.hall[data-state=on] .led-text{opacity:1}
+.hall-copy{position:relative;z-index:2;display:grid;justify-items:center;align-content:start;gap:18px;padding-top:26px;text-align:center}
+.type{min-height:1.1em;margin:0;font:500 clamp(40px,11vw,88px)/1 "Bodoni Moda",serif;letter-spacing:-.02em}
+.type .c{display:inline-block;width:.06em;height:.8em;margin-left:.06em;background:#fff;vertical-align:-.05em;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.switch{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:14px 24px;border-radius:999px;border:1px solid #fff;background:#fff;color:#000;font:600 16px/1 "Hanken Grotesk";cursor:pointer;transition:.3s}
+.switch .dot{width:12px;height:12px;border-radius:50%;background:#000;box-shadow:0 0 0 3px #00000022}
+.hall[data-state=on] .switch{background:transparent;color:#fff;border-color:#ffffff55}
+.hall[data-state=on] .switch .dot{background:var(--led2);box-shadow:0 0 14px var(--led2)}
+.console{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;opacity:.25;pointer-events:none;transition:opacity .6s}
+.hall[data-state=on] .console{opacity:1;pointer-events:auto}
+.console button{min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid #ffffff33;background:#ffffff0d;color:#fff;font:500 14.5px/1 "Hanken Grotesk";cursor:pointer}
+.console button[aria-checked=true]{background:#fff;color:#000;border-color:#fff}
+/* manifeste */
+.manifest{padding:110px 20px;max-width:1100px;margin:0 auto}
+.manifest .big{font:400 clamp(28px,6.4vw,58px)/1.18 "Bodoni Moda",serif;margin:0 0 30px}
+.manifest .small{color:var(--mute);max-width:34em;margin:0;font-size:18px}
+.head{display:grid;gap:14px;margin-bottom:34px}
+.head h2{font-size:clamp(36px,8vw,68px)}
+.head p{color:var(--mute);margin:0}
+/* écrans */
+.screens{padding:40px 0 100px}
+.screens .head{padding:0 20px;max-width:1100px;margin:0 auto 34px;justify-items:start}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 18px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.screen{scroll-snap-align:start;display:grid;align-content:end;gap:10px;min-height:380px;padding:22px;position:relative;overflow:hidden;border:1px solid #1d1d28;background:#05060f}
+.screen .glass{position:absolute;inset:0;background:var(--g);opacity:.9}
+.screen>*:not(.glass){position:relative}
+.screen h3{font-size:32px}
+.screen p{color:#d6d8ef;margin:0;font-size:15.5px}
+.screen[data-mood=convention]{--g:radial-gradient(90% 70% at 50% 110%,#1E2FD8,transparent 70%),conic-gradient(from 200deg at 50% 100%,transparent,#38B6FF33,transparent 40%)}
+.screen[data-mood=lancement]{--g:radial-gradient(80% 70% at 50% 110%,#9EE6FF,transparent 65%),conic-gradient(from 180deg at 50% 100%,transparent,#ffffff26,transparent 30%)}
+.screen[data-mood=gala]{--g:radial-gradient(90% 70% at 50% 110%,#C9922E,transparent 70%),conic-gradient(from 200deg at 50% 100%,transparent,#FFE7C433,transparent 40%)}
+.screen[data-mood=congres]{--g:radial-gradient(90% 70% at 50% 110%,#127C86,transparent 70%),conic-gradient(from 200deg at 50% 100%,transparent,#9EE6FF26,transparent 40%)}
+@media(min-width:960px){.strip{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;overflow:visible;padding:0}.screen{min-height:460px}}
+/* référence */
+.ref{max-width:1100px;margin:0 auto;padding:100px 20px;border-top:1px solid #1d1d28;border-bottom:1px solid #1d1d28;text-align:center}
+.ref .kicker{color:var(--led2);margin:0 0 14px;font-weight:500}
+.ref h2{font-size:clamp(64px,18vw,180px);letter-spacing:.02em}
+.ref p:last-child{color:var(--mute);max-width:30em;margin:20px auto 0}
+/* calcul */
+.sizer,.rdv{max-width:1100px;margin:0 auto;padding:100px 20px}
+.calc{display:grid;gap:22px}
+.paxv{font:500 clamp(90px,26vw,220px)/.9 "Bodoni Moda",serif;color:#fff}
+.calc input[type=range]{width:100%;accent-color:var(--led2);height:34px}
+.dispo{display:flex;flex-wrap:wrap;gap:8px}
+.dispo input{position:absolute;opacity:0}
+.dispo label{min-height:44px;display:flex;align-items:center;padding:10px 16px;border:1px solid #ffffff33;border-radius:999px;cursor:pointer;font-size:15px}
+.dispo input:checked+label{background:var(--led2);border-color:var(--led2);color:#000}
+.dispo input:focus-visible+label{outline:2px solid #fff;outline-offset:2px}
+.out{display:grid;gap:6px;border-top:1px solid #1d1d28;padding-top:22px}
+.out strong{font:500 clamp(46px,11vw,84px)/1 "Bodoni Moda",serif;color:var(--led3)}
+.out span{color:var(--mute)}
+.calc small{color:#6f6f7b}
+/* rdv */
+.form{display:grid;gap:16px;max-width:720px}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:600;color:#cfd0dc}
+.form input,.form select{font:400 16px/1.4 "Hanken Grotesk";padding:14px;background:#0b0b12;color:#fff;border:1px solid #2a2a38;border-radius:6px;width:100%}
+.form .row{display:grid;gap:16px}
+@media(min-width:640px){.form .row{grid-template-columns:1fr 1fr}}
+.go{min-height:54px;border:0;border-radius:999px;background:var(--led1);color:#fff;font:600 16px/1 "Hanken Grotesk";cursor:pointer;box-shadow:0 0 30px #1E2FD866}
+.form-ok{background:#0d1440;border:1px solid #2a3aa8;padding:14px;border-radius:6px;color:#d6dbff;margin:0}
+.phone{display:inline-block;margin-top:44px;color:#fff;text-decoration:none;font:500 clamp(40px,10vw,84px)/1 "Bodoni Moda",serif;border-bottom:1px solid #ffffff44}
+.foot{padding:60px 20px 40px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid #1d1d28}
+.foot img{height:58px;width:auto;margin:0 auto 18px}
+@media(min-width:960px){.hall{padding-top:100px}.manifest{padding:160px 20px}}
+@media(prefers-reduced-motion:reduce){.type .c{animation:none}}
+@media(max-width:700px){.wall{aspect-ratio:4/3}}
